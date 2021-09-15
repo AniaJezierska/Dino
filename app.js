@@ -17,8 +17,14 @@ function Dino(species, height, weight, diet, when, where, fact) {
   this.fact = fact;
 }
 
+Dino.prototype = Object.create(AnimalSpec.prototype);
+Dino.prototype.constructor = Dino;
+
 function Human(name, height, weight, diet) {
   Individual.call(this, "human", height, weight, diet);
   this.name = name;
   this.diet = diet;
 }
+
+Human.prototype = Object.create(AnimalSpec.prototype);
+Human.prototype.constructor = Human;
